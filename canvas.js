@@ -16,6 +16,13 @@ var hue = 0;
 var direction = true;
 var isDrawing = false;
 
+c.beginPath();
+c.strokeStyle = "white";
+c.textAlign = "center";
+c.font = "70px Arial";
+c.strokeText("DRAW ON ME!",canvas.width/2,canvas.height/2);
+
+
 //main function, called when mouse is down and moving
 function draw(e) {
 	//conditional checking isDrawing flag, to stop the drawing when false
@@ -23,13 +30,16 @@ function draw(e) {
 		return;
 	}
 
+	
 	//commented out block will add seizure inducing background.  
 	//uncomment at own risk!!
 
-	// var R = Math.floor(Math.random()*256);
-	// var G = Math.floor(Math.random()*256);
-	// var B = Math.floor(Math.random()*256);
-	// canvas.style.background = 'rgba('+ R + ', ' + G + ', ' + B + ', 1)';
+
+		// var R = Math.floor(Math.random()*256);
+		// var G = Math.floor(Math.random()*256);
+		// var B = Math.floor(Math.random()*256);
+		// canvas.style.background = 'rgba('+ R + ', ' + G + ', ' + B + ', 1)';
+
 
 	//draw methods
 	c.lineJoin = 'round';
@@ -54,7 +64,7 @@ function draw(e) {
 	}
 
 	//checks max and min limits of the line width, and changes direction flag when reached
-	if (c.lineWidth>=100 || c.lineWidth <=1) {
+	if (c.lineWidth>=50 || c.lineWidth <=1) {
 		direction = !direction;
 	}
 
